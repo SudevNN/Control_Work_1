@@ -21,10 +21,9 @@ string[] FillArray(int num)
     return array;
 }
 
-// Создание массива и наполнение элементов вручную с клавиатуры
+// Поиск количества элементов массива, длинной 3 и менее символа
 int CountOfTripleElements(string[] arr)
 {
-    // string[] array = new string[num];
     int numInd = 0;
     for (int i = 0; i < arr.Length; i++)
     {
@@ -38,7 +37,7 @@ int CountOfTripleElements(string[] arr)
     return numInd;
 }
 
-// из массива строк filledArr формирует новый массив из строк, длина которых меньше, либо равна 3 символам. 
+// Формирует из созданного вручную массива, новый массив из строк, длина которых меньше или равна 3 символам. 
 string[] FillArrayToThreeElements(string[] arr, int num)
 {
     string[] resArray = new string[num];
@@ -46,19 +45,14 @@ string[] FillArrayToThreeElements(string[] arr, int num)
     for (int i = 0; i < arr.Length; i++)
     {
         string str = arr[i];
-        Console.WriteLine($"Кол-во: [ {str} ]");
         if (str.Length <= 3)
         {
             resArray[numInd] = arr[i];
             numInd++;
         }
-        // numInd++;
-        // colInd = 0;
     }
     return resArray;
 }
-
-
 
 // Меняем кодировку:
 Console.InputEncoding = System.Text.Encoding.GetEncoding("utf-16");
@@ -74,11 +68,9 @@ int numberOfTripleElements = CountOfTripleElements(filledArr);
 
 string[] ArrThreeElements = FillArrayToThreeElements(filledArr, numberOfTripleElements);
 
-Console.WriteLine($"Кол-во: [ {numberOfTripleElements} ]");
+Console.WriteLine($"Результат: [ {string.Join(", ", filledArr)} ] → [ {string.Join(", ", ArrThreeElements)} ]");
 
-Console.WriteLine($"Массив: [ {string.Join(" ;", filledArr)} ]");
-
-Console.WriteLine($"Массив: [ {string.Join(" ;", ArrThreeElements)} ]");
+// Console.WriteLine($"Результат: [ {string.Join(", ", ArrThreeElements)} ]");
 // string wordStr = Console.ReadLine();
 // string wordStrToLower = wordStr.ToLower();
 
@@ -89,5 +81,3 @@ Console.WriteLine($"Массив: [ {string.Join(" ;", ArrThreeElements)} ]");
 // char[,] createMatrix = FillMatrix(rows, columns);
 // PrintMatrix(createMatrix); // Массив ДО
 // Console.WriteLine("Результат: ");
-// string matrToStr = UnionCharElements(createMatrix);
-// Console.WriteLine(matrToStr); // Строка ПОСЛЕ
