@@ -46,7 +46,6 @@ string[] FillArrayToThreeElements(string[] arr, int num)
     for (int i = 0; i < arr.Length; i++)
     {
         string str = arr[i];
-        Console.WriteLine($"Кол-во: [ {str} ]");
         if (str.Length <= 3)
         {
             resArray[numInd] = arr[i];
@@ -74,11 +73,11 @@ int numberOfTripleElements = CountOfTripleElements(filledArr);
 
 string[] ArrThreeElements = FillArrayToThreeElements(filledArr, numberOfTripleElements);
 
-Console.WriteLine($"Кол-во: [ {numberOfTripleElements} ]");
+// Console.WriteLine($"Массив: [ {numberOfTripleElements} ]");
 
-Console.WriteLine($"Массив: [ {string.Join(" ;", filledArr)} ]");
+Console.WriteLine($"[ {string.Join(", ", filledArr)} ] → [ {string.Join(", ", ArrThreeElements)} ]");
 
-Console.WriteLine($"Массив: [ {string.Join(" ;", ArrThreeElements)} ]");
+// Console.WriteLine($"Результат: [ {string.Join(", ", ArrThreeElements)} ]");
 // string wordStr = Console.ReadLine();
 // string wordStrToLower = wordStr.ToLower();
 
