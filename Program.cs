@@ -9,20 +9,50 @@
 // [“1234”, “1567”, “-2”, “computer science”] → [“-2”]
 // [“Russia”, “Denmark”, “Kazan”] → []
 
+// Создание массива и наполнение элементов вручную с клавиатуры
 string[] FillArray(int num)
 {
     string[] array = new string[num];
-    // char wordStr = new char();
     for (int i = 0; i < num; i++)
     {
         Console.Write($"Введите элемент {i+1} и нажмите Enter: ");
-        // char wordStr = Convert.ToChar(Console.ReadLine());
-        // string wordStrToLower = wordStr.ToLower();
         array[i] = Console.ReadLine(); 
     }
     return array;
 }
 
+// Поиск количества элементов массива, длинной 3 и менее символа
+int CountOfTripleElements(string[] arr)
+{
+    int numInd = 0;
+    for (int i = 0; i < arr.Length; i++)
+    {
+        string str = arr[i];
+
+        if (str.Length <= 3)
+        {
+            numInd++;
+        } 
+    }
+    return numInd;
+}
+
+// Формирует из созданного вручную массива, новый массив из строк, длина которых меньше или равна 3 символам. 
+string[] FillArrayToThreeElements(string[] arr, int num)
+{
+    string[] resArray = new string[num];
+    int numInd = 0;
+    for (int i = 0; i < arr.Length; i++)
+    {
+        string str = arr[i];
+        if (str.Length <= 3)
+        {
+            resArray[numInd] = arr[i];
+            numInd++;
+        }
+    }
+    return resArray;
+}
 
 // Меняем кодировку:
 Console.InputEncoding = System.Text.Encoding.GetEncoding("utf-16");
@@ -34,8 +64,13 @@ int numOfElements = int.Parse(Console.ReadLine());
 // Заполняем массив вручную элементами
 string[] filledArr = FillArray(numOfElements);
 
-Console.WriteLine($"Массив: [ {string.Join(" ;", filledArr)} ]");
+int numberOfTripleElements = CountOfTripleElements(filledArr);
 
+string[] ArrThreeElements = FillArrayToThreeElements(filledArr, numberOfTripleElements);
+
+Console.WriteLine($"Результат: [ {string.Join(", ", filledArr)} ] → [ {string.Join(", ", ArrThreeElements)} ]");
+
+// Console.WriteLine($"Результат: [ {string.Join(", ", ArrThreeElements)} ]");
 // string wordStr = Console.ReadLine();
 // string wordStrToLower = wordStr.ToLower();
 
@@ -46,5 +81,3 @@ Console.WriteLine($"Массив: [ {string.Join(" ;", filledArr)} ]");
 // char[,] createMatrix = FillMatrix(rows, columns);
 // PrintMatrix(createMatrix); // Массив ДО
 // Console.WriteLine("Результат: ");
-// string matrToStr = UnionCharElements(createMatrix);
-// Console.WriteLine(matrToStr); // Строка ПОСЛЕ
