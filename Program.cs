@@ -73,9 +73,7 @@ int numberOfTripleElements = CountOfTripleElements(filledArr);
 
 string[] ArrThreeElements = FillArrayToThreeElements(filledArr, numberOfTripleElements);
 
-// Console.WriteLine($"Массив: [ {numberOfTripleElements} ]");
-
-Console.WriteLine($"[ {string.Join(", ", filledArr)} ] → [ {string.Join(", ", ArrThreeElements)} ]");
+Console.WriteLine($"Результат: [ {string.Join(", ", filledArr)} ] → [ {string.Join(", ", ArrThreeElements)} ]");
 
 // Console.WriteLine($"Результат: [ {string.Join(", ", ArrThreeElements)} ]");
 // string wordStr = Console.ReadLine();
