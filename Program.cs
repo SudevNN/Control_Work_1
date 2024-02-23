@@ -64,20 +64,11 @@ int numOfElements = int.Parse(Console.ReadLine());
 // Заполняем массив вручную элементами
 string[] filledArr = FillArray(numOfElements);
 
+// Поиск количества элементов массива, длинной 3 и менее символа
 int numberOfTripleElements = CountOfTripleElements(filledArr);
 
+// Формирует из созданного вручную массива, новый массив из строк, длина которых меньше или равна 3 символам. 
 string[] ArrThreeElements = FillArrayToThreeElements(filledArr, numberOfTripleElements);
 
+// Вывод результата
 Console.WriteLine($"Результат: [ {string.Join(", ", filledArr)} ] → [ {string.Join(", ", ArrThreeElements)} ]");
-
-// Console.WriteLine($"Результат: [ {string.Join(", ", ArrThreeElements)} ]");
-// string wordStr = Console.ReadLine();
-// string wordStrToLower = wordStr.ToLower();
-
-// int rows = Convert.ToInt32(Console.ReadLine());
-// Console.Write("Введите количество столбцов: ");
-// int columns = Convert.ToInt32(Console.ReadLine());
-// // Наполняем массив случайными числами
-// char[,] createMatrix = FillMatrix(rows, columns);
-// PrintMatrix(createMatrix); // Массив ДО
-// Console.WriteLine("Результат: ");
